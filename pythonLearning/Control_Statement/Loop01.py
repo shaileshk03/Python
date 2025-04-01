@@ -1,17 +1,15 @@
+# When we want to perform a repetitive task a number of times, we use a loop to perform such a task in coding.
+# Let's learn how to create loops and how to use them in coding.
 
-
-
-
-
-# Input will take value as String
-# If you want to take input as string float etc. we need to add int(input()), float(input()).
+# Input() method takes input as a String.
+# If you want the input method to take input as float, int etc. we need to add int(input()), float(input()) instead of input().
 
 user_input = input("Enter value you would like to add in list :")
 
-# This for loop will iterate over all the string input given by user
+# For loop will iterate over all elements input given by user
 for x in user_input:
-    # Print all String input one by one
-    #print(x)
+    # Print all the String input one by one
+    # print(x)
     # Extract numbers from string one by one
     element = int(x[:-1])
     print("List : ", element)
