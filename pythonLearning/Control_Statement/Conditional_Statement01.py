@@ -6,7 +6,7 @@ for i in range(num1, num2):
     if  (i % 5 == 0) and (i % 7 == 0):
         i +=1
         # Print answer horizontally
-        #print(i, " ", end='', flush=True)
+        print(i, " ", end='', flush=True)
 
 #2. Temperature
     temp = input("Enter temperature you would like to convert like 60F or 140C?:: ")
