@@ -9,6 +9,7 @@ class LinkedList:
         self.tail = None
         self.size = 0
 
+    # Add first
     def add_first(self, data):
         new_node = Node(data)
         self.size += 1
@@ -18,6 +19,7 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
+    # Add Last
     def add_last(self, data):
         new_node = Node(data)
         self.size += 1
@@ -27,6 +29,7 @@ class LinkedList:
         self.tail.next = new_node
         self.tail = new_node
 
+    # Print LinkedList
     def print_list(self):
         if self.head is None:
             print("LL is empty")
@@ -37,6 +40,7 @@ class LinkedList:
             temp = temp.next
         print()
 
+    # Add LinkedList
     def add(self, idx, data):
         if idx == 0:
             self.add_first(data)
@@ -49,6 +53,7 @@ class LinkedList:
         new_node.next = temp.next
         temp.next = new_node
 
+    # Remove first
     def remove_first(self):
         if self.size == 0:
             print("LL is empty")
@@ -61,6 +66,7 @@ class LinkedList:
         self.head = self.head.next
         return val
 
+    # Remove last
     def remove_last(self):
         if self.size == 0:
             print("LL is empty")
@@ -79,6 +85,7 @@ class LinkedList:
         self.size -= 1
         return val
 
+    # Iterative search
     def iter_search(self, key):
         temp = self.head
         i = 0
@@ -89,6 +96,7 @@ class LinkedList:
             i += 1
         return -1
 
+    # Recursive search helper function
     def helper_fun(self, head, key):
         if head is None:
             return -1
@@ -99,8 +107,23 @@ class LinkedList:
             return -1
         return idx + 1
 
+    # Recursive Search function
     def rec_search(self, key):
         return self.helper_fun(self.head, key)
+
+    # Reverse Linked List
+    def reverse_linked_list(self):
+        prev = None
+        current = self.tail = self.head
+        next_node = None
+
+        while current is not None:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+            # update head
+        self.head = prev
 
 if __name__ == "__main__":
     ls = LinkedList()
@@ -114,4 +137,6 @@ if __name__ == "__main__":
     print("Size of LinkedList is : " + str(ls.size))
 
     ls.remove_last()
+    ls.print_list()
+    ls.reverse_linked_list()
     ls.print_list()
