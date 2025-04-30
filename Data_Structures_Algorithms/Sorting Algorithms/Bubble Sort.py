@@ -21,3 +21,7 @@ arr = [3,1,2,4,5,2,34]
 bubblesort(arr)
 # print the array
 print(arr)
+
+# Note:
+# The time complexity of this sort comes out to be O(n\^2). This is because if there are n items in the array (list), there would be n iterations per item.
+# Bubble Sort is best suited for small datasets, nearly sorted data, and educational purposes where simplicity and ease of understanding are prioritized over efficiency.
