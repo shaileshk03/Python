@@ -8,10 +8,10 @@
 #
 
 
-# Print 1 to 6 numbers using control statement
+# Print 1 to 6 numbers using a control statement
 i = 0
 while i < 6:
-  i += 1 # Increment we can write (i = i+) as well, Increment will move to next element.
+  i += 1 # Increment we can write (i = i+) as well, Increment will move to the next element.
   # if i == 3:
   #  continue -- It will continue to next
   #  break -- break as soon as condition is met
@@ -30,13 +30,13 @@ while i < 6:
  # If, elif...else uses
   a = 30
   b = 33
-  # First code will check if block code if condition get satisfied will print "A is greater than B"
+  # First code will check if block code if condition gets satisfied will print "A is greater than B"
   if a > b:
       print("A is greater than B :")
-  # In case if condition above not satisfied then it will move to elif block and check condition here.
+  # In case if the condition above not satisfied in above block then it will move to elif block and check condition here.
   elif a == b:
       print("A and B are equals :")
-  # If all the above conditions are not satisfied it will simply print the else statement.
+  # If all the above conditions are not satisfied, it will simply print the else statement.
   else:
       print("B is greater than A :")
 
@@ -47,7 +47,7 @@ while i < 6:
   print("C") if c > d else print("D")
 
 
-# AND -and OR, NOT conditional statement
+# AND-and OR, NOT conditional statement
 a = 200
 b = 33
 c = 500

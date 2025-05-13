@@ -6,7 +6,7 @@
 
 user_input = input("Enter value you would like to add in list :")
 
-# For loop will iterate over all elements input given by user
+# For loop will iterate over all the element input given by user
 for x in user_input:
     # Print all the String input one by one
     # print(x)
