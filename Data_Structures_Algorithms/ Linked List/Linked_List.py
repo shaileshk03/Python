@@ -155,6 +155,16 @@ class LinkedList:
         prev.next = prev.next.next
         return
 
+    # Find the middle of the LinkedList (slow fast approach
+    def find_mid(head):
+        slow = head
+        fast = head
+
+        while fast is not None and fast.next is not None:
+            slow = slow.next  # 1
+            fast = fast.next.next  # 2
+        return slow  # slow is midNode
+
 if __name__ == "__main__":
     ls = LinkedList()
     ls.add_first(2)
