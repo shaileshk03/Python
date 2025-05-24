@@ -1,3 +1,6 @@
+from contextlib import nullcontext
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -125,18 +128,47 @@ class LinkedList:
             # update head
         self.head = prev
 
+    # Delete nth linkedList from end
+    def delete_nth_from_end(self, n):
+        # calculate size
+        size = 0
+        # temp pointing to head
+        temp = self.head
+
+        while temp is not None:
+            temp = temp.next
+            size += 1
+
+        if n == size:
+            self.head = self.head.next  # Remove first
+            return
+
+        # size-n
+        i = 1
+        i_to_find = size - n
+        prev = self.head
+
+        while i < i_to_find:
+            prev = prev.next
+            i += 1
+
+        prev.next = prev.next.next
+        return
+
 if __name__ == "__main__":
     ls = LinkedList()
     ls.add_first(2)
     ls.add_first(1)
     ls.add_last(3)
     ls.add_last(4)
+    ls.add_last(5)
     ls.add(2, 3)
 
     ls.print_list()
     print("Size of LinkedList is : " + str(ls.size))
 
-    ls.remove_last()
-    ls.print_list()
-    ls.reverse_linked_list()
+    # ls.remove_last()
+    # ls.print_list()
+    # ls.reverse_linked_list()
+    ls.delete_nth_from_end(3)
     ls.print_list()
