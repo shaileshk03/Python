@@ -1,5 +1,7 @@
 from contextlib import nullcontext
 
+from Data_Structures_Algorithms.Array.Find_Smallest_Largest import find_smallest_num
+
 
 class Node:
     def __init__(self, data):
@@ -164,6 +166,37 @@ class LinkedList:
             slow = slow.next  # 1
             fast = fast.next.next  # 2
         return slow  # slow is midNode
+
+    # Check palindrome
+    def check_palindrome(head):
+        if head is None or head.next is None:
+            return True
+
+        # step1 - Find middle
+        mid_node = head.find_mid(head)
+
+        # step2 - reverse 2nd half
+        prev = None
+        current = mid_node
+        next_node = None
+
+        while current is not None:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+
+        right = prev
+        left = head
+
+        # step3 - check left half and right half
+        while right is not None:
+            if left.data != right.data:
+                return False
+            left = left.next
+            right = right.next
+
+        return True
 
 if __name__ == "__main__":
     ls = LinkedList()
